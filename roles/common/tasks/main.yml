@@ -1,0 +1,33 @@
+- name: remove old install dir
+  file: path= "{{ install_dir }}" state=absent
+
+- name: create install dir
+  file: path="{{ install_dir }}" state=directory
+
+- name: remove old temporary install dir
+  file: path="{{ install_temp_dir }}" state=absent
+
+- name: create temporary install dir
+  file: path="{{ install_temp_dir }}" state=directory
+
+- name: create spark history server dir
+  file: path="{{ spark_history_dir }}" state=directory
+
+- import_tasks: os-packages.yml
+
+- import_tasks: ssh-config.yml
+
+- name: Update sshd configs and Backup
+  blockinfile:
+    path: /etc/ssh/sshd_config
+    backup: yes
+    block: |
+     #The below settings were added to support the Spark Standalone Cluster
+     PermitRootLogin yes
+     PubkeyAuthentication yes
+     PasswordAuthentication yes
+
+- name: Restart sshd service
+  service:
+   name: sshd
+   state: restarted

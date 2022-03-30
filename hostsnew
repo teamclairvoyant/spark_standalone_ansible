@@ -1,0 +1,22 @@
+[all:vars]
+ansible_connection=ssh
+#ansible_user=ubuntu
+ansible_become=true
+#ansible_user=root
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+gather_facts=True
+gathering=smart
+install_java=False
+install_temp_dir=/tmp/ansible-install
+install_dir=/opt
+spark_history_dir=/tmp/spark-events
+python_version=2
+
+[master]
+ip-172-31-26-39.us-east-2.compute.internal   ansible_host=172.31.26.39   ansible_host_private=172.31.26.39  ansible_host_id=1
+
+[nodes]
+ip-172-31-18-220.us-east-2.compute.internal   ansible_host=172.31.18.220   ansible_host_private=172.31.18.220  ansible_host_id=2
+ip-172-31-24-124.us-east-2.compute.internal   ansible_host=172.31.24.124   ansible_host_private=172.31.24.124  ansible_host_id=3
+ip-172-31-28-5.us-east-2.compute.internal   ansible_host=172.31.28.5   ansible_host_private=172.31.28.5  ansible_host_id=4
+

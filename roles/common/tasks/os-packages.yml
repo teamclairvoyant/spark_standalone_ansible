@@ -1,0 +1,11 @@
+- name: upgrade all packages
+  shell:
+      apt-get update -y
+
+- name: install commonly used os dependencies
+  shell:
+          #apt-get install -y unzip bzip2 gcc openssl-devel libffi-devel python-devel openssl-devel libcurl libcurl-devel patch
+      apt-get install -y unzip bzip2 gcc openssl libffi-dev patch openjdk-8-jdk-headless
+
+- name: clean yum repository
+  shell: "apt-get clean"
