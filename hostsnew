@@ -13,10 +13,10 @@ spark_history_dir=/tmp/spark-events
 python_version=2
 
 [master]
-ip-172-31-26-39.us-east-2.compute.internal   ansible_host=172.31.26.39   ansible_host_private=172.31.26.39  ansible_host_id=1
+<master_hostname>   ansible_host=<master_ip>   ansible_host_private=<master_hostname>  ansible_host_id=1
 
 [nodes]
-ip-172-31-18-220.us-east-2.compute.internal   ansible_host=172.31.18.220   ansible_host_private=172.31.18.220  ansible_host_id=2
-ip-172-31-24-124.us-east-2.compute.internal   ansible_host=172.31.24.124   ansible_host_private=172.31.24.124  ansible_host_id=3
-ip-172-31-28-5.us-east-2.compute.internal   ansible_host=172.31.28.5   ansible_host_private=172.31.28.5  ansible_host_id=4
+<node1_hostname>   ansible_host=<node1_ip>   ansible_host_private=<node1_ip>  ansible_host_id=2
+<node2_hostname>   ansible_host=<node2_ip>   ansible_host_private=<node2_ip>  ansible_host_id=3
+<node3_hostname>   ansible_host=<node3_ip>   ansible_host_private=<node3_ip>  ansible_host_id=4
 
