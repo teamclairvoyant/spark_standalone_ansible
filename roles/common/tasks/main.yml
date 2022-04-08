@@ -17,15 +17,15 @@
 
 - import_tasks: ssh-config.yml
 
-- name: Update sshd configs and Backup
-  blockinfile:
-    path: /etc/ssh/sshd_config
-    backup: yes
-    block: |
+#- name: Update sshd configs and Backup
+#  blockinfile:
+#    path: /etc/ssh/sshd_config
+#    backup: yes
+#    block: |
      #The below settings were added to support the Spark Standalone Cluster
-     PermitRootLogin yes
-     PubkeyAuthentication yes
-     PasswordAuthentication yes
+#     PermitRootLogin yes
+#     PubkeyAuthentication yes
+#     PasswordAuthentication yes
 
 - name: Restart sshd service
   service:
